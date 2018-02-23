@@ -1,13 +1,10 @@
 var numLines = 10;
-var particles = [];
+var particles;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
   angleMode(DEGREES);
-  for (var i = 0; i < numLines; i++) {
-    var foo = new Particle();
-    particles.push(foo);
-  }
+  generateParticles()
 }
 
 function draw() {
@@ -25,4 +22,17 @@ function draw() {
   pop();
   }
 
+}
+
+function generateParticles() {
+  particles = [];
+  for (var i = 0; i < numLines; i++) {
+    var foo = new Particle();
+    particles.push(foo);
+  }
+  background(255);
+}
+
+function mouseClicked() {
+  generateParticles();
 }
